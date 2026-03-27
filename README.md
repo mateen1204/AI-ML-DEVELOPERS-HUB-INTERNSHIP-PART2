@@ -1,66 +1,55 @@
-# AI-ML-DEVELOPERS-HUB-INTERNSHIP-PART2
-Machine Learning Project Portfolio: Deep Learning & Production Pipelines
+🚀 Machine Learning & Data Engineering Portfolio
+
 Author: Mateen Asghar
+Institution: Developer Hub & Co. | COMSATS University
+Position: ML Research Intern | March 2026
+This repository showcases a series of advanced Machine Learning implementations ranging from Computer Vision and Multimodal Architectures to LLM-driven Automation.
 
-Institution: COMSATS University Islamabad, Wah Campus
+📂 Project Portfolio
 
-Focus: NLP, Computer Vision, and Automated ML Workflows
+Task 1: News Classification via BERT Transformers
+Model: bert-base-uncased
+Focus: High-accuracy text classification using multi-head attention mechanisms.
+Implementation: Developed a fine-tuning pipeline for the AG News dataset, achieving state-of-the-art convergence using GPU-accelerated training.
 
-This repository features three specialized implementations designed to bridge the gap between academic theory and production-ready machine learning. All modules were developed using Python, PyTorch, and Scikit-learn.
+Task 2: Robust Production Pipelines (Churn Analysis)
+Framework: Scikit-learn & Joblib
+Focus: Feature engineering and model persistence.
+Implementation: Built a modular pipeline using ColumnTransformer to handle categorical encoding and numerical scaling simultaneously, ensuring zero data leakage between training and validation sets.
 
-📂 Project Modules
-🔹 Module 1: News Topic Classification (NLP)
-Architecture: Fine-tuned BERT (Bidirectional Encoder Representations from Transformers).
 
-Objective: Categorization of news headlines into four major topics using the ag_news dataset.
+Task 3: Deep Feature Extraction (Convolutional Neural Networks)
+Architecture: Custom 3-Layer CNN
+Focus: Spatial feature mapping and image preprocessing.
+Implementation: Developed a vision-based model optimized for high-dimensional image data, utilizing ReLU activation and Dropout layers to mitigate overfitting.
 
-Key Implementation Details: * Pre-training weight adaptation via bert-base-uncased.
 
-Optimized tokenization strategy including attention masks and padding.
+Task 4: Multimodal Housing Analytics (Late Fusion)
+Architecture: Dual-Stream MLP + CNN
+Focus: Hybrid Data Fusion for Predictive Modeling.
+Implementation: A sophisticated regression model that concatenates visual property features with tabular metadata (sqft, bedrooms, etc.) to estimate market value.
+Evaluation: Optimized using RMSE and MAE to ensure high pricing precision.
 
-Deployment: A real-time web interface built with Gradio for instant model validation.
 
-🔹 Module 2: Automated Customer Churn Pipeline
-Methodology: End-to-End Scikit-learn Pipeline Construction.
+Task 5: Automated Ticket Tagging (LLM Zero-Shot vs. Fine-Tuning)
+Model: Llama-3.2-3B & DistilBERT
+Focus: Scalable NLP Automation.
+Implementation: A comparative analysis of Zero-Shot/Few-Shot prompting via the 2026 Hugging Face Router API against a specialized fine-tuned classifier.
+Result: Demonstrated how LLMs can drastically reduce cold-start problems in ticket categorization.
 
-Objective: Predicting customer attrition using a production-grade workflow.
 
-Key Implementation Details: * Preprocessing: Automated ColumnTransformer for StandardScaler and OneHotEncoder.
 
-Model: Random Forest Classifier optimized for high-dimensional tabular data.
+🖥️ Computing & Optimization
+To handle the memory-intensive nature of the BERT and Multimodal tasks, the entire suite was deployed on Google Colab Cloud Infrastructure:
+GPU Computing: Utilized NVIDIA T4 hardware to manage large batch sizes.
+Efficiency: Implemented FP16 Mixed Precision to optimize VRAM usage and speed up training cycles.
 
-Persistence: Serialized the final pipeline using Joblib for "One-Click" inference in live environments.
 
-🔹 Module 3: Multimodal Housing Price Regression
-Architecture: Dual-Branch Late Fusion Neural Network.
-
-Objective: Fusing unstructured (Image) and structured (Tabular) data to predict real estate values.
-
-Key Implementation Details: * CNN Branch: 3-layer Convolutional Neural Network for spatial feature extraction from property images.
-
-MLP Branch: Dense layers for processing numerical metadata.
-
-Evaluation: Performance benchmarks established using MAE and RMSE.
-
-🖥️ Technical Note: Compute & Hardware Optimization
-To ensure training stability for models exceeding 110M parameters (BERT), this project was migrated from a local environment to Google Colab.
-
-GPU Acceleration: Utilized NVIDIA T4 Tensor Cores to handle heavy tensor computations and Mixed Precision (FP16) training.
-
-Resource Management: Cloud migration prevented the kernel instability and VRAM overflows encountered on local consumer hardware during the fine-tuning process.
-
-Efficiency: Reduced model convergence time from several hours (CPU-based) to under 15 minutes (GPU-based).
-
-📥 Getting Started
-Open in Colab: Upload the .ipynb files to Google Colab.
-
-Enable GPU: Go to Runtime > Change runtime type > T4 GPU.
-
-Install Requirements:
-
+🛠️ Installation & Execution
 Bash
-pip install torch torchvision transformers datasets scikit-learn gradio joblib
-Execute: Run cells sequentially to view training logs and final metrics.
+pip install torch transformers tensorflow scikit-learn pandas matplotlib
+Open the .ipynb files in Google Colab.
 
-Submission Verification
-Each notebook contains the finalized execution outputs, including training/validation loss curves and performance metrics as per the 6th-semester CS requirements.
+
+Enable GPU Acceleration in the runtime settings.
+Ensure your Hugging Face API Token is active for Task 5's LLM inference.
